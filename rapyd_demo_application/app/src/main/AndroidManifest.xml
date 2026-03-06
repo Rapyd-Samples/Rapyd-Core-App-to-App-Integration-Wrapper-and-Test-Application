@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="net.rapyd.demo">
+
+    <uses-permission android:name="com.pax.permission.PRINTER"/>
+    <uses-permission android:name="com.pax.permission.PICC"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="com.pax.permission.PED"/>
+    <uses-permission android:name="com.pax.permission.ICC"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+                     tools:ignore="ScopedStorage"/>
+    <uses-permission android:name="com.pax.permission.MAGCARD"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.BATTERY_STATS" tools:ignore="ProtectedPermissions"/>
+    <uses-permission
+            android:name="android.permission.CHANGE_CONFIGURATION"
+            tools:ignore="ProtectedPermissions"/>
+
+    <application
+            android:name=".DemoApp"
+            android:allowBackup="true"
+            android:dataExtractionRules="@xml/data_extraction_rules"
+            android:fullBackupContent="@xml/backup_rules"
+            android:label="@string/app_name"
+            android:icon="@mipmap/ic_launcher"
+            android:supportsRtl="true"
+            android:theme="@style/Theme.Light"
+            tools:targetApi="31">
+
+        <activity android:name=".MainActivity"
+                  android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="ACTION_CALLBACK"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".receivers.ResultReceiver"
+                  android:enabled="true"
+                  android:exported="true">
+            <intent-filter>
+                <action android:name="TRANSACTION_CANCELLED_ACTION" />
+                <action android:name="TRANSACTION_RESULT_ACTION" />
+                <action android:name="END_OF_DAY_RESULT_ACTION" />
+                <action android:name="CONFIG_RESULT_ACTION" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+    <queries>
+        <package android:name="net.rapyd.core"/>
+    </queries>
+
+</manifest>

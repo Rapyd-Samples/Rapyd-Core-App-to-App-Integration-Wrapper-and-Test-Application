@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Rapyd Demo</string>
+    <string name="voidButton">Void</string>
+    <string name="exit">Exit</string>
+    <string name="report">Report</string>
+    <string name="refund">Refund</string>
+    <string name="preauth">Preauth</string>
+    <string name="completion">Completion</string>
+    <string name="cycleKey">Cycle Key</string>
+    <string name="sale">Sale</string>
+    <string name="list">List</string>
+</resources>

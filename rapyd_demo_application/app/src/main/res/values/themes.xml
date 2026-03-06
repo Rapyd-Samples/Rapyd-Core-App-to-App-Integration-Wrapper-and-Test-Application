@@ -1,0 +1,8 @@
+<resources>
+    <style name="Theme.Light" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="android:background">#F6F6F6</item>
+        <item name="backgroundColor">#F6F6F6</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:fontFamily">@font/anton_regular</item>
+    </style>
+</resources>

@@ -1,0 +1,7 @@
+<resources>
+    <dimen name="logo_width">100dp</dimen>
+    <dimen name="logo_height">30dp</dimen>
+    <dimen name="logo_marginTop">20dp</dimen>
+    <dimen name="textNormal">20sp</dimen>
+    <dimen name="functionListHeight">85dp</dimen>
+</resources>
